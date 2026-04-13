@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WebClass Drop</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="sheet">
+      <header class="hero">
+        <div class="hero__mark" aria-hidden="true"></div>
+        <div class="hero__text">
+          <h1 class="hero__title">WebClass Drop</h1>
+          <p class="hero__subtitle">ドラッグ＆ドロップでファイルを選べます</p>
+        </div>
+      </header>
+
+      <section class="card">
+        <div class="row">
+          <div class="row__label">
+            <span class="row__title" id="toggleLabel">機能を有効にする</span>
+            <span class="row__desc">WebClass の提出フォームにドロップ領域を表示します</span>
+          </div>
+          <label class="switch" title="オン / オフ">
+            <input type="checkbox" id="toggleEnabled" checked aria-labelledby="toggleLabel" />
+            <span class="switch__track"></span>
+          </label>
+        </div>
+      </section>
+
+      <section class="card card--muted">
+        <h2 class="section-title">使い方</h2>
+        <ol class="steps">
+          <li>レポート提出など、ファイル選択がある画面を開きます。</li>
+          <li>点線の領域にファイルをドロップするか、クリックして選びます。</li>
+          <li>PDF や画像はプレビューが表示されます。Office 形式はアイコンで種類を確認できます。</li>
+          <li>選び直すときは「選択を解除」からいったん空にできます。</li>
+          <li>従来どおり「レポート提出」等のボタンでアップロードします。</li>
+        </ol>
+      </section>
+
+      <footer class="footer">
+        <a class="link" href="../legal/terms.html" target="_blank" rel="noopener noreferrer">利用規約</a>
+        <span class="dot" aria-hidden="true">·</span>
+        <a class="link" href="../legal/privacy.html" target="_blank" rel="noopener noreferrer"
+          >プライバシーポリシー</a>
+      </footer>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>

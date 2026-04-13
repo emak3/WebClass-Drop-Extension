@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', 'Hiragino Sans',
+    'Hiragino Kaku Gothic ProN', 'Yu Gothic UI', Meiryo, sans-serif;
+  background: #f2f2f7;
+  color: #1c1c1e;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 36px 20px 48px;
+}
+
+.panel {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px 22px 26px;
+  box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.04), 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+h1 {
+  margin: 0 0 6px;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.meta {
+  margin: 0 0 20px;
+  font-size: 13px;
+  color: #636366;
+}
+
+h2 {
+  margin: 22px 0 8px;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+h2:first-of-type {
+  margin-top: 0;
+}
+
+p,
+li {
+  font-size: 15px;
+  color: #48484a;
+}
+
+ul {
+  padding-left: 1.2em;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+a {
+  color: #007aff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 16px;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.note {
+  margin-top: 20px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: rgba(0, 122, 255, 0.08);
+  font-size: 13px;
+  color: #1c1c1e;
+}

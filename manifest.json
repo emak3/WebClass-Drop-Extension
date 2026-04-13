@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "WebClass Drop — ドラッグ＆ドロップ提出",
+  "version": "1.1.2",
+  "description": "WebClass のレポート提出などでファイルをドラッグ＆ドロップできるようにします。",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "WebClass Drop"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/webclass/*",
+        "*://*/*/webclass/*",
+        "*://*/WebClass/*",
+        "*://*/*/WebClass/*"
+      ],
+      "js": ["content/content.js"],
+      "css": ["content/content.css"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ]
+}
