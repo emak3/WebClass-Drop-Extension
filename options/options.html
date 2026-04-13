@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WebClass Drop — 設定</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="page-header">
+        <h1 class="page-title">WebClass Drop 設定</h1>
+        <p class="page-lead">
+          拡張機能は<strong>ここで追加したドメイン</strong>上の WebClass（URL に
+          <code>webclass</code> が含まれるページ）だけで動作します。初回はインストール直後にこの画面が開きます。
+        </p>
+      </header>
+
+      <section class="card">
+        <h2 class="card-title">機能のオン／オフ</h2>
+        <div class="row">
+          <div class="row__label">
+            <span class="row__title" id="toggleLabel">WebClass でドロップ領域を表示する</span>
+            <span class="row__desc">オフにすると、許可済みドメインでも UI は出ません</span>
+          </div>
+          <label class="switch" title="オン / オフ">
+            <input type="checkbox" id="toggleEnabled" checked aria-labelledby="toggleLabel" />
+            <span class="switch__track"></span>
+          </label>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 class="card-title">許可するドメイン</h2>
+        <p class="hint">
+          大学の WebClass をブラウザで開き、<strong>アドレスバーに表示されている URL</strong>の先頭からドメインまでをコピーして貼り付けてください（<code>/webclass/...</code>
+          以降のパスは不要です）。
+        </p>
+        <p class="example">例: <code>https://webclass.your-university.ac.jp</code></p>
+        <div class="add-row">
+          <input
+            type="text"
+            id="originInput"
+            class="origin-input"
+            placeholder="https://webclass.example.ac.jp"
+            spellcheck="false"
+            autocomplete="off"
+            aria-label="許可するサイトのオリジン"
+          />
+          <button type="button" class="btn-primary" id="addOriginBtn">追加</button>
+        </div>
+        <p class="status" id="optionsStatus" role="status"></p>
+        <div class="site-list" id="siteList"></div>
+      </section>
+
+      <section class="card card--muted">
+        <h2 class="card-title">手順</h2>
+        <ol class="steps">
+          <li>上で WebClass のドメインを追加し、ブラウザの許可ダイアログで「許可」します。</li>
+          <li>WebClass のページを<strong>再読み込み</strong>します。</li>
+          <li>レポート提出など、ファイル選択がある画面でドロップ領域が表示されます。</li>
+        </ol>
+      </section>
+
+      <footer class="page-footer">
+        <a href="../legal/terms.html" target="_blank" rel="noopener noreferrer">利用規約</a>
+        <span class="dot" aria-hidden="true">·</span>
+        <a href="../legal/privacy.html" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a>
+      </footer>
+    </div>
+    <script src="options.js"></script>
+  </body>
+</html>

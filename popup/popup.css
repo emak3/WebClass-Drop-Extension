@@ -185,6 +185,49 @@ body {
   user-select: none;
 }
 
+.settings-hint {
+  margin: 0 0 10px;
+  font-size: 12px;
+  line-height: 1.45;
+  color: #48484a;
+}
+
+.settings-hint strong {
+  font-weight: 600;
+}
+
+.btn-open-settings {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  color: #fff;
+  background: #007aff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-open-settings:hover {
+  background: #0066d6;
+}
+
+.btn-open-settings:focus {
+  outline: none;
+}
+
+.btn-open-settings:focus-visible {
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.35);
+}
+
+.steps__code {
+  font-size: 11px;
+  word-break: break-all;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .switch__track,
   .switch__track::after {

@@ -3,30 +3,37 @@
 
   const STORAGE_KEY = 'wcDropEnabled';
   const toggle = document.getElementById('toggleEnabled');
+  const openSettingsBtn = document.getElementById('openSettings');
 
-  function read(cb) {
-    chrome.storage.sync.get([STORAGE_KEY], function (r) {
+  function storageGet(keys, cb) {
+    chrome.storage.sync.get(keys, function (r) {
       if (chrome.runtime.lastError) {
-        chrome.storage.local.get([STORAGE_KEY], cb);
+        chrome.storage.local.get(keys, cb);
       } else {
         cb(r);
       }
     });
   }
 
-  function write(val) {
-    chrome.storage.sync.set({ [STORAGE_KEY]: val }, function () {
+  function storageSet(obj, cb) {
+    chrome.storage.sync.set(obj, function () {
       if (chrome.runtime.lastError) {
-        chrome.storage.local.set({ [STORAGE_KEY]: val });
+        chrome.storage.local.set(obj, cb || function () {});
+      } else if (cb) {
+        cb();
       }
     });
   }
 
-  read(function (r) {
+  storageGet([STORAGE_KEY], function (r) {
     toggle.checked = r[STORAGE_KEY] !== false;
   });
 
   toggle.addEventListener('change', function () {
-    write(toggle.checked);
+    storageSet({ [STORAGE_KEY]: toggle.checked });
+  });
+
+  openSettingsBtn.addEventListener('click', function () {
+    chrome.runtime.openOptionsPage();
   });
 })();

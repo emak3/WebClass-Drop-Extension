@@ -2,8 +2,11 @@
 
 WebClass のレポート提出など、**ファイル選択付きのフォーム**にドラッグ＆ドロップ用の領域を足すブラウザ拡張機能です。実際のアップロードは従来どおり WebClass の「レポート提出」等のボタンで行います。
 
+**利用する大学の WebClass ドメイン**は、**設定ページ**で追加します。初回インストール時に設定タブが自動で開きます。あとからも拡張アイコンのポップアップから「設定を開く」で同じ画面に行けます。
+
 ## 機能
 
+- **許可したドメインだけ**で動作（設定でオリジンを追加するときにブラウザの許可ダイアログが出ます）
 - **ドラッグ＆ドロップ**または**クリック**で `input[type=file]` にファイルを割り当て
 - **指定形式がある課題**では、その形式だけ選べるよう `accept` の補完と検証（`data-type-limit`、`.tips` の表記、`accept` から推定）
 - **PDF・画像**のプレビュー、Office 系はアイコン＋メタ情報
@@ -15,6 +18,8 @@ WebClass のレポート提出など、**ファイル選択付きのフォーム
 1. Chrome で `chrome://extensions` を開く
 2. **デベロッパーモード**をオン
 3. **パッケージ化されていない拡張機能を読み込む**で、このリポジトリのルート（`manifest.json` があるフォルダ）を選択
+4. 開いた**設定**タブで、WebClass を表示しているブラウザのアドレスバーから **https:// からドメインまで**（例: `https://webclass.example.ac.jp`）をコピーして貼り付け、「追加」する
+5. WebClass のページを**再読み込み**する
 
 ## アイコン（`icons/`）
 
@@ -30,6 +35,7 @@ WebClass のレポート提出など、**ファイル選択付きのフォーム
 
 ```
 manifest.json
+background.js
 icons/
   icon48.png
   icon128.png
@@ -38,6 +44,10 @@ popup/
   popup.html
   popup.css
   popup.js
+options/
+  options.html
+  options.css
+  options.js
 content/
   content.js
   content.css
@@ -46,18 +56,6 @@ legal/
   privacy.html
   legal.css
 ```
-
-## 権限
-
-| 権限 | 理由 |
-|------|------|
-| `storage` | ポップアップのオン／オフを記憶するため |
-
-コンテンツスクリプトは `*://*/webclass/*` 等のパスにのみ注入されます（`manifest.json` の `matches` を参照）。
-
-## 対象ページ
-
-URL パスに `webclass` または `WebClass` が含まれるページで動作する想定です（大学・機関のドメインは問いません）。
 
 ## 規約・ポリシー
 
