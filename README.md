@@ -59,7 +59,7 @@ legal/
 
 ## 規約・ポリシー
 
-- [利用規約](legal/terms.html)
-- [プライバシーポリシー](legal/privacy.html)
+- [利用規約](https://wcd.ouma3.org/terms.html)
+- [プライバシーポリシー](https://wcd.ouma3.org/privacy.html)
 
 （拡張機能内ポップアップからも開けます。）
